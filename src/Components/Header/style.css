@@ -1,0 +1,23 @@
+.perfil{
+
+ width: 25px;
+ height: 25px;
+
+}
+
+.top{
+    background-color: #232628;
+    color: grey;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.head{
+
+    background-color: #232628;
+}
+
+.carousel-inner{
+    height: 30rem;
+}
