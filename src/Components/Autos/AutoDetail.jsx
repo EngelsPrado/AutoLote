@@ -113,7 +113,7 @@ const AutoDetail=({uid,user})=>{
                     </div>
                     <div className="col-3">
                       {/* falta */}
-                      <FormCotizar   ></FormCotizar>
+                      <FormCotizar uid={uid}  ></FormCotizar>
                     </div>
                 </div>
               

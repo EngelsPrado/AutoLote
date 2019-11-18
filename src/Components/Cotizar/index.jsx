@@ -1,13 +1,20 @@
 import React,{Fragment} from 'react'
 import { Formik } from "formik";
+import { firestore } from '../../firebase';
 
 
-const FormCotizar=()=>{
+const FormCotizar=({uid})=>{
 
 
   const handleSubmit = values => {
        
      console.log(values)
+
+     firestore.collection("cotizaciones").add({
+      ... values,
+      uid
+     })
+
     } 
 
 
@@ -30,7 +37,7 @@ const FormCotizar=()=>{
       onSubmit={(values, { setSubmitting }) => {
         console.log(values);
         handleSubmit(values);
-        setSubmitting(true);
+        setSubmitting(false);
       }}
     >
       {({
