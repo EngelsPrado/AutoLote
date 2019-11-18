@@ -28,15 +28,6 @@ img {width:100%;}
 h5 {font-size:16px;}
 
 
-@media (max-width: 411px){
-
-    .ais-Hits-item, .ais-InfiniteHits-item, .ais-InfiniteResults-item, .ais-Results-item {
-      width: 80%;
-   
-    }
-
-
-}
 
 
 @media (max-width: 768px){
@@ -48,7 +39,17 @@ h5 {font-size:16px;}
 
 
 }
+@media (max-width: 420px){
 
+    .ais-Hits-item, .ais-InfiniteHits-item, .ais-InfiniteResults-item, .ais-Results-item {
+     width: 80%;
+    }
+
+    .carousel{
+        height: 40vh;
+    } 
+ }
+ 
 @media (max-width: 375px){
 
     .ais-Hits-item, .ais-InfiniteHits-item, .ais-InfiniteResults-item, .ais-Results-item {
