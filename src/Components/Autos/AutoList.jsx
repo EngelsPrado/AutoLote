@@ -61,11 +61,11 @@ const AutoList=({dato,user})=>{
 
     
         
-                <div class="row text-center ml-5">
+                <div class="text-center ml-5">
                     
                     
                     
-                    <div class=" box border py-4">
+                    <div class="col-12 box border ">
                     <i onClick={handleClickPlusMinus} class={Boton}></i>
                         <div class="box-carimage">
                             <img src="https://img0.gaadicdn.com/images/car-images/265x110/Mahindra/Mahindra-XUV500-2018/6334/047.jpg" alt=""/>

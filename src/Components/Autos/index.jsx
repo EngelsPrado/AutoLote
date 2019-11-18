@@ -60,7 +60,7 @@ const Auto= ({user})=>{
        <RefinementList attribute="tipo"/>
        <RefinementList attribute="anio"/>
        <RefinementList attribute="transmision"/>
-         <Hits   hitComponent={Hit}/>
+         <Hits  hitComponent={Hit}/>
           
         <Pagination></Pagination>
          
