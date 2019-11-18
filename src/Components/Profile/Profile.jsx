@@ -51,14 +51,14 @@ const Profile = ({uid,user}) => {
                                 userName={perfil.displayName} /> */}
 
                             <Presentation
-                                fullName={perfil.displayName}
+                                fullName={user.displayName}
                             />
 
                             <div class="container-fluid mt--7">
                                 <div class="row">
 
-                                    <AsideCard uid={uid} photo={perfil.photoURL} name={perfil.displayName} />
-                                    <MyAccount perfil={perfil} />
+                                    <AsideCard uid={uid} photo={user.photoURL} name={user.displayName} />
+                                    <MyAccount perfil={user} />
                                 </div>
                             </div>
 
