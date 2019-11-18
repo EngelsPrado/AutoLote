@@ -48,31 +48,37 @@ const Auto= ({user})=>{
 
       <div className="col-12"> 
       <InstantSearch  searchClient={searchClient} indexName="rent">
-        <div className="col-6">
+        <div className="row ml-2">
          <SearchBox />
          <ClearRefinements />
+         <HitsPerPage
+        defaultRefinement={4}
+        items={[{ value: 2 }, { value: 4 }, { value: 6 }, { value: 8 }]}
+         />
         </div>
     
         
          <CurrentRefinements />
         
-         <HitsPerPage
-        defaultRefinement={4}
-        items={[{ value: 2 }, { value: 4 }, { value: 6 }, { value: 8 }]}
-      />
       <div className="row">
        <div className="col-2">
         <h3>Marcas</h3> 
-        <RefinementList attribute="marca"/>
+        <RefinementList limit={2}
+        showMoreLimit={5}
+        showMore={true} attribute="marca"/>
        </div>
 
        <div className="col-2"> 
         <h3>Tipo</h3> 
-        <RefinementList attribute="tipo"/>
+        <RefinementList limit={2}
+        showMoreLimit={5}
+        showMore={true} attribute="tipo"/>
        </div>
        <div className="col-2" >
        <h3>Año</h3> 
-       <RefinementList attribute="anio"/>
+       <RefinementList limit={2}
+        showMoreLimit={5}
+        showMore={true} attribute="anio"/>
        </div>
        <div  className="col-2">
        <h3>Transmision</h3> 
