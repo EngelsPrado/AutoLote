@@ -1,13 +1,33 @@
-import React,{Fragment} from 'react'
+import React,{Fragment, useState} from 'react'
 import './style.css'
 import { signInWithGoogle,signInWithFacebook } from './../../firebase';
-
+import {Redirect} from '@reach/router'
 const Login= ()=>{
+
+    const [redir,setRedir]=useState(false)
+
+    const iniciarG=()=>{
+
+         signInWithGoogle().then().then( setRedir(true))
+
+        
+         
+
+    }
+
+    const iniciarF=()=>{
+
+        signInWithFacebook().then().then( setRedir(true))
+
+       
+        
+
+   }
 
 
      return (
       <Fragment>
-
+    {  redir? <Redirect to="/"></Redirect>:null }
 <div class="container m-auto">
     <div class="row">
         <div class="col-md-3 col-md-offset-4 caja-logo">
@@ -34,10 +54,10 @@ const Login= ()=>{
                     <span class="or">o</span>
                     <div class="row">
                         <div class="col-md-6 row-block">
-                            <button   onClick={signInWithFacebook} class="btn btn-facebook btn-block">Facebook</button>
+                            <button   onClick={iniciarF} class="btn btn-facebook btn-block">Facebook</button>
                         </div>
                         <div class="col-md-6 row-block">
-                            <button onClick={signInWithGoogle} class="btn btn-google btn-block">Google</button>
+                            <button onClick={iniciarG } class="btn btn-google btn-block">Google</button>
                         </div>
                     </div>
                 </div>

@@ -22,8 +22,8 @@ function App() {
        
        <Router>
         <Content user={user} path="/" ></Content> 
-        <Login path="/login"></Login>
-        <Profile  path="/profile/:uid" ></Profile>
+        <Login   path="/login"></Login>
+        <Profile user={user} path="/profile/:uid" ></Profile>
         <Carrito user={user} path="/carrito" ></Carrito>
         <Filtro  path="/autos" ></Filtro>
         <AutoDetail path="/autos/:uid" user={user}></AutoDetail>

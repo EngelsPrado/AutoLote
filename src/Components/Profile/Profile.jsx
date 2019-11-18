@@ -12,11 +12,11 @@ import './style.css'
 import { firestore } from './../../firebase'
 
 
-const Profile = ({uid}) => {
+const Profile = ({uid,user}) => {
  
 
     const [perfil,setPerfil]=useState(null)
-
+     console.log(user)
     useEffect(()=>{
 
       
@@ -42,7 +42,7 @@ const Profile = ({uid}) => {
     return (
         <Fragment>
             {
-                !perfil ? <Login></Login> :
+                !user ? <Login></Login> :
 
                     <Fragment>
                         <div class="main-content">
@@ -58,7 +58,7 @@ const Profile = ({uid}) => {
                                 <div class="row">
 
                                     <AsideCard uid={uid} photo={perfil.photoURL} name={perfil.displayName} />
-                                    <MyAccount perfil={perfil}/>
+                                    <MyAccount perfil={perfil} />
                                 </div>
                             </div>
 
