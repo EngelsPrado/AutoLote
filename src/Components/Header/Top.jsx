@@ -31,10 +31,10 @@ const Top =({user})=>{
             <div>
                {
                    !user? <Fragment>
-                       <Link to="/login">
+                       <Link to="/login" className="login">
                         Iniciar Sesion
                     </Link>
-                    <Link to="/login">
+                    <Link to="/login" className="login">
                             Registrarse
                         </Link> 
                    </Fragment>: <Fragment>

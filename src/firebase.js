@@ -2,6 +2,8 @@ import firebase from "firebase/app";
 import "firebase/firestore"; // NEW
 import "firebase/auth";
 import "firebase/storage";
+import React from 'react'
+import {Redirect} from '@reach/router'
 const uuidv4 = require('uuid/v4');
 
 const config = {
@@ -21,7 +23,7 @@ export const firestore = firebase.firestore(); // NEW
 export const auth = firebase.auth();
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const fbprovider = new firebase.auth.FacebookAuthProvider();
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(provider).then(()=><Redirect to="/" ></Redirect>);
 export const signInWithFacebook = () => auth.signInWithPopup(fbprovider);
 export const signOut = () => auth.signOut();
 

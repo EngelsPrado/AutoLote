@@ -5,17 +5,28 @@
 
 }
 
+.login{
+    padding: 10px;
+    color: azure;
+}
+
+.login:hover {
+    color: gray;
+  }
+
 .top{
     background-color: #232628;
     color: grey;
-    font-size: 11px;
+    font-size: 13px;
     display: flex;
     justify-content: space-between;
+
 }
 
 .head{
 
     background-color: #232628;
+    color:white;
 }
 
 .carousel-inner{
