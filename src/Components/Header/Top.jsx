@@ -55,9 +55,9 @@ const Top =({user})=>{
         </div>  
 
         <nav class="navbar  head">
-            <a class="navbar-brand" href="#">
+            <Link class="navbar-brand" to="/">
             <img src="https://317gf4wi0sy3dzbid185pjab-wpengine.netdna-ssl.com/files/2019/05/Autolote-logo-white@2x.png"  title="Inicio" alt="Logo"/> 
-            </a>
+            </Link>
 
             <div>
              <span>

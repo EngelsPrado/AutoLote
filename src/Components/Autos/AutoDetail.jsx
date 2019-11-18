@@ -2,6 +2,7 @@ import React,{Fragment,useState,useEffect} from 'react'
 import { firestore } from '../../firebase'
 import AutoList from './AutoList'
 import Carousel from 'react-bootstrap/Carousel'
+import FormCotizar from './../Cotizar/index'
 
 
 const AutoDetail=({uid,user})=>{
@@ -109,6 +110,10 @@ const AutoDetail=({uid,user})=>{
                                   </div>
                         </div>
                     </div>
+                    </div>
+                    <div className="col-3">
+                      {/* falta */}
+                      <FormCotizar   ></FormCotizar>
                     </div>
                 </div>
               
