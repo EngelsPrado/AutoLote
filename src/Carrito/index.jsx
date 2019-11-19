@@ -57,7 +57,6 @@ const Carrito=({user})=>{
     <Fragment>
         <div className="row">
 
-       
       { 
         data.map(dato=>{
           return <AutoList dato={dato} user={user} ></AutoList>
