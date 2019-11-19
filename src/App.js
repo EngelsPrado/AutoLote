@@ -11,6 +11,7 @@ import {UserContext} from './Providers/UserProvider'
 import Carrito from './Carrito';
 import Filtro from './Components/BusquedaAutos';
 import AutoDetail from './Components/Autos/AutoDetail';
+import NotFound from './pages/404';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Carrito user={user} path="/carrito" ></Carrito>
         <Filtro  path="/autos" ></Filtro>
         <AutoDetail path="/autos/:uid" user={user}></AutoDetail>
+        <NotFound default></NotFound>
        </Router>
       <Footer></Footer>
     </Fragment>
