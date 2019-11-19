@@ -1,10 +1,30 @@
 import React,{Fragment, useState} from 'react'
 import './style.css'
-import { signInWithGoogle,signInWithFacebook } from './../../firebase';
+import { signInWithGoogle,signInWithFacebook} from './../../firebase';
+import { auth } from 'firebase';
 import {Redirect} from '@reach/router'
 const Login= ()=>{
 
     const [redir,setRedir]=useState(false)
+    const [email,setEmail]=useState('')
+    const [pass,setPass]=useState('')
+    const [error,setError]=useState(null)
+
+    const sesion=(e)=>{
+
+      e.preventDefault()
+      
+      console.log(email + pass)
+      auth().signInWithEmailAndPassword(email, pass).then().then(setRedir(true)).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        setError(errorMessage)
+        console.log(errorMessage)
+      });
+    }
+
 
     const iniciarG=()=>{
 
@@ -37,21 +57,21 @@ const Login= ()=>{
                 </div>
                 <form class="form-signin" action="#">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Correo" required autofocus />
+                    <input type="text"  value={email} onChange={(e)=>setEmail(e.target.value)} class="form-control" placeholder="Correo" required autofocus />
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Contraseña" required />
+                    <input type="password" value={pass} onChange={(e)=>setPass(e.target.value)} class="form-control" placeholder="Contraseña" required />
                 </div>
                 <label class="checkbox centrar">
                     <input type="checkbox" value="remember-me" />
                     Mantenme conectado
                 </label>
-                <button class="btn-light action-button btn inicio" type="submit">
-                    Registrarme</button>
+                <button class="btn-light action-button btn inicio" onClick={sesion}  type="submit">
+                    Iniciar Sesion</button>
                 </form>
-                <a class="forgotLnk " href="http://www.jquery2dotnet.com">No puedo acceder a mi cuenta</a>
+             
                 <div class="or-box">
-                    <span class="or">o</span>
+                    <span class="or ml-5">O</span>
                     <div class="row">
                         <div class="col-md-6 row-block">
                             <button   onClick={iniciarF} class="btn btn-facebook btn-block">Facebook</button>
@@ -60,14 +80,11 @@ const Login= ()=>{
                             <button onClick={iniciarG } class="btn btn-google btn-block">Google</button>
                         </div>
                     </div>
+                    {
+                        error
+                    }
                 </div>
-                <div class="or-box row-block">
-                    <div class="row">
-                        <div class="col-md-12 row-block">
-                            <a href="http://www.jquery2dotnet.com" class="btn-light action-button btn crear">Crear nueva cuenta</a>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>
