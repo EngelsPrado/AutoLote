@@ -27,7 +27,9 @@
 img {width:100%;}
 h5 {font-size:16px;}
 
-
+.carousel-inner {
+    height: 40rem;
+}
 
 
 @media (max-width: 768px){
