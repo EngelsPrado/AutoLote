@@ -6,8 +6,10 @@
 }
 
 .login{
-    padding: 10px;
+    margin-left: 5px;
+    padding: 0px;
     color: azure;
+    font-size: 15px;
 }
 
 .login:hover {
@@ -17,10 +19,14 @@
 .top{
     background-color: #232628;
     color: grey;
-    font-size: 13px;
-    display: flex;
-    justify-content: space-between;
+   
+ 
+}
 
+
+.cuenta span{
+    color: white;
+    font-size: 20px;
 }
 
 .head{

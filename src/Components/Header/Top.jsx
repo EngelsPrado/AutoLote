@@ -12,15 +12,9 @@ const Top =({user})=>{
 
     <Fragment>
     
-        <div className="d-flex top">
-            <div>
-                <span>
-                        
-                        MANAGUA NICARAGUA. ROTONDA EL GÜEGÜENSE 350 MTS. AL SUR     
-                </span>
-            </div>      
-             
-           <div>
+        <div className="d-flex justify-content-center top">
+           
+           <div className="col-4">
                <span>
                 
                  LUN - VIE 8.00AM - 5:00PM | SAB 8.00AM - 12:00MD     
@@ -28,18 +22,18 @@ const Top =({user})=>{
                
             </div>  
 
-            <div>
+            <div className="col-8 d-flex justify-content-end">
                {
-                   !user? <Fragment>
+                   !user? <div className="d-block">
                        <Link to="/login" className="login">
                         Iniciar Sesion
                     </Link>
                     <Link to="/login" className="login">
                             Registrarse
                         </Link> 
-                   </Fragment>: <Fragment>
+                   </div>: <Fragment>
 
-                   <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <a class="nav-link dropdown-toggle cuenta" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img src={user.photoURL} class="rounded-circle w-10 perfil" alt="User Image"/>
                   <span class="hidden-xs">Mi cuenta</span>
                 </a>

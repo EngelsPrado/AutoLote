@@ -55,11 +55,12 @@ const Carrito=({user})=>{
 
 
     <Fragment>
+      <h1>Favoritos</h1>
         <div className="row">
 
       { 
         data.map(dato=>{
-          return <AutoList dato={dato} user={user} ></AutoList>
+          return <div className="col-md-3"> <AutoList dato={dato} user={user} ></AutoList> </div>
         })
       }
  
